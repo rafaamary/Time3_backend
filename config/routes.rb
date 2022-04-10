@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   	namespace 'v1' do
   		resources :users
   		resources :competences
+			resources :materials
+
+			get 'materials/assunto/:title', to: 'materials#show'
   	end
   end
 end
