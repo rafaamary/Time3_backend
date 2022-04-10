@@ -25,14 +25,14 @@ module Api
   
       # Deletar User
       def destroy
-        competence = Competences.find(params[:id])
+        competence = Competence.find(params[:id])
         competence.destroy
         render json: { status: 'Competences Deleted!', message: 'Competences Deleted!', data: competence }, status: :ok
       end
     
       # Atualizar um Competence
       def update
-        competence = Competences.find(params[:id])
+        competence = Competence.find(params[:id])
         if competence.update(competence_params)
           render json: {status: 'SUCCESS', message:'Updated Competences!', data:competence},status: :ok
         else

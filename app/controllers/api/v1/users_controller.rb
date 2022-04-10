@@ -2,7 +2,7 @@ module Api
     module V1
       class UsersController < ActionController::API
 
-        # Listar todos os alunos
+        # Listar todos os users
         def index
           users = User.order('created_at DESC')
           render json: { status: 'User Found!', message: 'User Found!', data: users }, status: :ok
@@ -34,7 +34,7 @@ module Api
       # Atualizar um User
 			def update
 				user = User.find(params[:id])
-				if aluno.update(user_params)
+				if user.update(user_params)
 					render json: {status: 'SUCCESS', message:'Updated User!', data:user},status: :ok
         else
 					render json: {status: 'ERROR', message:'User not updated!', data:user.errors}, status: :unprocessable_entity
