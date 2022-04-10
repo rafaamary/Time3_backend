@@ -1,15 +1,15 @@
 module Api
   module V1
-    class CompetencesController < ActionController
+    class CompetencesController < ActionController::API
 
       # Listar todas as Competences de um usuario especifico
       def index
-        competences = Competence.where(user_id: params[:user_id])
+        competences = Competence.order('created_at DESC')
         render json: { status: 'Competences Found!', message: 'Competences Found!', data: competences }, status: :ok
       end
       # Listar competence passando ID
       def show
-        competence = Competence.find(params[:id])
+        competence = Competence.where(user_id: params[:id])
         render json: { status: 'Competences Found!', message: 'Competences Found!', data: competence }, status: :ok
       end
     
