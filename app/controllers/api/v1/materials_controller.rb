@@ -8,7 +8,7 @@ module Api
       #end
 
       def show
-        materials = Competence.where(title: params[:title]).pluck(:materials)
+        materials = Competence.where(title: params[:title]).pluck(:materials).compact
         render json: { status: 'Competences Found!', message: 'Competences Found!', data: materials  }, status: :ok
       end
       # Parametros aceitos
