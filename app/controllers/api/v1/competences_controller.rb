@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ApplicationController < ActionController
+    class CompetencesController < ActionController
 
       # Listar todas as Competences de um usuario especifico
       def index

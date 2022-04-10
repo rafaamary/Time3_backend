@@ -1,10 +1,10 @@
 module Api
     module V1
-      class ApplicationController < ActionController
+      class UsersController < ActionController::API
 
         # Listar todos os alunos
         def index
-          user = User.order('created_at DESC')
+          users = User.order('created_at DESC')
           render json: { status: 'User Found!', message: 'User Found!', data: user }, status: :ok
         end
         
