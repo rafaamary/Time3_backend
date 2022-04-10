@@ -5,7 +5,7 @@ module Api
         # Listar todos os alunos
         def index
           users = User.order('created_at DESC')
-          render json: { status: 'User Found!', message: 'User Found!', data: user }, status: :ok
+          render json: { status: 'User Found!', message: 'User Found!', data: users }, status: :ok
         end
         
         # Listar user passando ID
